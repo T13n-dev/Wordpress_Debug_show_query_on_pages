@@ -3,13 +3,11 @@ Trong thư mục:
 
 wp-config.php
 // Hiển thị các câu truy vấn trên cùng một trang của WP
-``
+```
 define("SAVEQUERIES", true);
-``
-
+```
 Tiếp ở functions.php đối với theme, ở plugin bỏ ở đâu tùy bạn:
-
-``
+```
 functions.php
   function debug_output() {
     global $wpdb;
@@ -21,11 +19,11 @@ functions.php
   
   }
   add_action( "wp_footer", "debug_output"  );
-``
+```
 
 Kết quả:
 
-``
+```
 Array(
   [0] => Array(
     [0] => SELECT option_name, option_value FROM wp_options WHERE autoload = "yes"
@@ -37,6 +35,6 @@ Array(
     )
   )
 )
-``
+```
 
 Trong đó: có câu truy vấn, tốc độ, các file liên quan bla bla .... Mấy bạn tìm hiểu thêm.
